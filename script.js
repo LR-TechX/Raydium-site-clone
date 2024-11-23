@@ -45,3 +45,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Handle Dropdown Hover
+const dropdown = document.querySelector(".group");
+dropdown.addEventListener("mouseover", () => {
+  const menu = dropdown.querySelector("ul");
+  menu.classList.remove("hidden");
+});
+dropdown.addEventListener("mouseout", () => {
+  const menu = dropdown.querySelector("ul");
+  menu.classList.add("hidden");
+});
+
+// Chart.js: Token Performance
+const ctx = document.getElementById("tokenChart").getContext("2d");
+const tokenChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [{
+      label: "ETH to SOL",
+      data: [10, 12, 8, 14, 16, 12],
+      borderColor: "rgba(59, 130, 246, 1)",
+      backgroundColor: "rgba(59, 130, 246, 0.2)",
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: true },
+      tooltip: { enabled: true },
+    }
+  }
+});
