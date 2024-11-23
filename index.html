@@ -1,5 +1,68 @@
 <!DOCTYPE html>
+<html lang="en"><!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raydium Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="tailwind.css">
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation Bar -->
+  <header class="bg-gray-800">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold">Raydium Clone</h1>
+      <nav class="space-x-6">
+        <a href="#" class="hover:text-blue-400">Swap</a>
+        <a href="#" class="hover:text-blue-400">Pool</a>
+        <a href="#" class="hover:text-blue-400">Farm</a>
+        <div class="relative group inline-block">
+          <button class="hover:text-blue-400">More</button>
+          <ul class="absolute hidden group-hover:block bg-gray-700 text-white py-2 mt-2">
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-600">Analytics</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-600">IDO</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-10">
+    <!-- Swap Section -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Token Swap</h2>
+      <div class="space-y-4">
+        <label class="block">
+          <span>From</span>
+          <input type="text" placeholder="ETH" class="w-full bg-gray-700 p-3 rounded-lg mt-2">
+        </label>
+        <label class="block">
+          <span>To</span>
+          <input type="text" placeholder="SOL" class="w-full bg-gray-700 p-3 rounded-lg mt-2">
+        </label>
+        <label class="block">
+          <span>Amount</span>
+          <input type="number" placeholder="Enter amount" class="w-full bg-gray-700 p-3 rounded-lg mt-2">
+        </label>
+        <button id="swap-button" class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600">
+          Swap Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="mt-10">
+      <h2 class="text-xl font-bold mb-4">Token Performance</h2>
+      <canvas id="tokenChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+</body>
+<script src="script.js"></script>
+</html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
